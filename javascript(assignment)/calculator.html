@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Math Operation</title>
+    <style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+#main {
+    max-width: 600px;
+    margin: 10 auto;
+    background: #fff;
+    color: white;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main_heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+
+.first, .second {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+
+
+
+#cal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+
+.sym {
+    background-color: #070707;
+    color: white;
+    /* border: none; */
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    /* cursor: pointer; */
+    font-size: 15px;
+    
+}
+h3{
+    font-size: 40px;
+}
+.sym:hover {
+    background-color: lightslategray;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+
+    .main_heading {
+        font-size: 1.25rem;
+    }
+
+    input{
+        font-size: 0.875rem;
+    }
+
+    #result {
+        font-size: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- container-section  -->
+    <section id="main">
+        <h3>Maths Operations</h3>
+        <div class="first">
+            <label>Enter 1st number :</label>
+            <input type="number" name="number1" id="number1">
+        </div>
+        <div class="second">
+            <label>Enter 2nd number :</label>
+            <input type="number" name="number" id="number2">
+        </div>
+
+        <div>
+
+            <div id="cal">
+                <div>
+                    <button class="sym" onclick="add ()">&#43;</button>
+                    <button class="sym" onclick="sub ()">&#8722;</button>
+                    <button class="sym" onclick="multi ()">&#42;</button>
+                </div>
+                <div>
+                    <button class="sym" onclick="divide ()">&#8725;</button>
+                    <button class="sym" onclick="reminde ()">&#37;</button>
+                </div>
+            </div>
+
+            <h2 id="result">Answer : </h2>
+
+        </div>
+    </section>
+    <!-- container-section end  -->
+    
+    <script>
+
+function add () {
+          const number1 = Number(document.getElementById("number1").value);
+          const number2 = Number(document.getElementById("number2").value);
+          const result = number1 + number2;
+          document.getElementById("result").textContent = `Answer: ${result}
+          `;
+        }
+
+        function sub () {
+          const number1 = (document.getElementById("number1").value);
+          const number2 = (document.getElementById("number2").value);
+          const result = number1 - number2;
+          document.getElementById("result").textContent = `Answer is: ${result}
+          `;
+        }
+     
+        function multi () {
+          const number1 = (document.getElementById("number1").value);
+          const number2 = (document.getElementById("number2").value);
+          const result = number1 * number2;
+          document.getElementById("result").textContent = `Answer is: ${result}
+          `;
+        }
+
+        
+        function divide () {
+          const number1 = (document.getElementById("number1").value);
+          const number2 = (document.getElementById("number2").value);
+
+          if (number2 == 0) {
+            document.getElementById('result').textContent = "Cannot Divided by Zero"
+          }
+
+          else {
+            const result = number1 / number2;
+            document.getElementById("result").textContent = `Answer is: ${result}
+          `;
+          }
+          
+        }
+     
+        function  reminde() {
+          const number1 = (document.getElementById("number1").value);
+          const number2 = (document.getElementById("number2").value);
+          const result = number1 % number2;
+          document.getElementById("result").textContent = `Answer is: ${result}
+          `;
+        }
+</script>
+</body>
+</html>

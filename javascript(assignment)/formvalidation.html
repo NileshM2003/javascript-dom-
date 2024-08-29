@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log | js</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            margin: 12% auto;
+            border: 2px solid black;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: gray;
+        }
+        label{
+            font-size: 25px;
+            margin: 20px;
+            text-transform: capitalize;
+            
+            /* margin-left: 8px; */
+            
+        }
+        input{
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            text-transform: capitalize;
+            border-radius: 20px;
+            /* outline: none; */
+            border: 1px solid black;
+
+            
+        }
+        h1{
+            text-align: center;
+            font-size: 30px;
+            margin: 20px;
+            text-transform: uppercase;
+        }
+        button{
+            padding: 10px;
+            margin: 20px;
+            font-size: 20px;
+            border-radius: 20px;
+            border: 1px solid black;
+        
+        }
+</style>
+</head>
+<body>
+    <div class="main">
+        <form action="">
+        <h1>login</h1>
+            <label for="">username</label>
+            <input type="text" id="username">
+            <span id="rd"></span>
+            <label for="">password</label>
+            <input type="password" id="password">
+            <span id="rd2"></span>
+        </form>
+        <button onclick="btn()">Submit</button>
+    </div>
+<script>
+    function btn() {
+        var username = document.querySelector("#username").value;
+        var password = document.querySelector("#password").value;
+        var rd = document.querySelector("#rd")
+        var rd2 = document.querySelector("#rd2")
+
+        if(username == "") {
+            rd.innerHTML = "enter your name";
+            rd.style.color ="red";
+            rd.style.fontsize ="15px"
+        }
+        else {
+            if(username.length < 2) {
+                rd.innerHTML ="name must be more than 2 character";
+                rd.style.color ="red";
+                rd.style.fontsize ="15px"
+            }
+            else {
+                rd.innerHTML = "";
+            }
+        }
+        if(password == "") {
+            rd2.innerHTML = "enter your password";
+            rd2.style.color ="red";
+            rd2.style.fontsize ="15px"
+        }
+        else {
+            if(password.length < 2) {
+                rd2.innerHTML ="name must be more than 2 character";
+                rd2.style.color ="red";
+                rd2.style.fontsize ="15px"
+            }
+            else {
+                rd2.innerHTML = "";
+            }
+        }
+    }
+</script>
+</body>
+</html>

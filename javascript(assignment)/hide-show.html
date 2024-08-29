@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	<strong>
+		<p>create a hide show password functionalities
+		</p>
+	</strong>
+
+	<strong>Password</strong>:
+	<input type="password" id="typepass">
+
+	<input type="checkbox" onclick="show()">
+	<strong>Show Password</strong>
+
+	<script>
+		function show() {
+			let temp = document.getElementById("typepass");
+			
+			if (temp.type === "password") {
+				temp.type = "text";
+			}
+			else {
+				temp.type = "password";
+			}
+		}
+	</script>
+</body>
+</html>
